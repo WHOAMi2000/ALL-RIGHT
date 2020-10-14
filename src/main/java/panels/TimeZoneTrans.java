@@ -1,5 +1,6 @@
 package panels;
 
+import panels.basic.GeneralPanel;
 import javax.swing.*;
 
 public class TimeZoneTrans {

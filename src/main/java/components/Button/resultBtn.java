@@ -1,12 +1,12 @@
 package components.button;
-
-import lombok.Getter;
-import lombok.Setter;
-import components.myText;
 import java.text.DecimalFormat;
 import java.util.EmptyStackException;
 import tools.postfixExpression;
 import tools.scienceCalculate;
+import lombok.Getter;
+import lombok.Setter;
+
+import components.text.*;
 
 @Getter
 @Setter
@@ -17,7 +17,7 @@ public class resultBtn extends myBtn {
         this.setText(name);
     }
 
-    public void scienceListener(String content,StringBuilder expression, myText resultText){
+    public void scienceListener(String content,StringBuilder expression, NumberInput resultText){
         this.addActionListener(e -> {
             try {
                 postfixExpression postfix = new postfixExpression(expression.toString());

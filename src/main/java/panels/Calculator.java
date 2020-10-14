@@ -1,15 +1,16 @@
 package panels;
 
 import javax.swing.*;
-import components.myText;
-import components.Button.*;
+import components.text.*;
+import components.button.*;
+import panels.basic.GeneralPanel;
 
 import java.awt.*;
 
 public class Calculator {
 
     private StringBuilder postfix = new StringBuilder();
-    private myText resultText = new myText("0",4);
+    private NumberInput resultText = new NumberInput("0",4);
     private final String[] RESULTBUTTONS={"n!","1/x","|x|","="};
     private final String[] NUMBERBUTTONS = { "7", "8", "9", "4", "5", "6","1","2","3","0", "π", "e"};
     private final  String[] OPERATORBUTTONS = { "%","e^x","2√x", "x²", "x^y", "log", "ln", "sin", "cos", "tan", "(", ")",  "/", "*", "-", "+"};

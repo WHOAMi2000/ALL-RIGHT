@@ -1,10 +1,10 @@
 package components.button;
 
-import components.myText;
+import components.text.*;
 
 public class operBtn extends myBtn{
 
-    public operBtn(String content, String operator, StringBuilder postfix, myText resultText, pointBtn point) {
+    public operBtn(String content, String operator, StringBuilder postfix, NumberInput resultText, pointBtn point) {
         super();
         this.setText(content);
         this.addActionListener(e->{

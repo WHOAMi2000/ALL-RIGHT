@@ -1,6 +1,6 @@
 package components.button;
-import components.button.*;
-import components.myText;
+import components.text.*;
+
 public class clearBtn extends myBtn{
 
     public clearBtn(){
@@ -8,14 +8,14 @@ public class clearBtn extends myBtn{
         this.setText("AC");
     }
 
-    public void generalListener(StringBuilder postfix, myText resultText){
+    public void generalListener(StringBuilder postfix, NumberInput resultText){
         this.addActionListener(e -> {
                 //注意处理.的情况
                 postfix.delete(0,postfix.length());
                 resultText.setText("0");
         });
     }
-    public void transformerListener(StringBuilder postfix, myText rawText, myText resultText){
+    public void transformerListener(StringBuilder postfix, NumberInput rawText, NumberInput resultText){
         this.addActionListener(e -> {
                 //注意处理.的情况
             postfix.delete(0,postfix.length());

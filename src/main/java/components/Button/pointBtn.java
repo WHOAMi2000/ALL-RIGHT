@@ -1,9 +1,9 @@
 package components.button;
 
-import components.text.MyTextField;
+import components.text.NumberInput;
 
 public class pointBtn extends myBtn{
-    public pointBtn(StringBuilder postfix, MyTextField resultText){
+    public pointBtn(StringBuilder postfix, NumberInput resultText){
         super();
         this.setText(".");
         this.addActionListener(e -> {

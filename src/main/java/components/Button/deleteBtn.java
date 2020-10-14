@@ -1,6 +1,6 @@
 package components.button;
-
-import components.myText;
+import components.text.*;
+import common.*;
 
 public class deleteBtn extends myBtn {
     public deleteBtn(){
@@ -47,7 +47,7 @@ public class deleteBtn extends myBtn {
         return flag;
     }
 
-    public void generalListener(StringBuilder postfix, myText resultText){
+    public void generalListener(StringBuilder postfix, NumberInput resultText){
         this.addActionListener(e -> {
             int len = postfix.length();
             if (len == 0){
@@ -80,6 +80,24 @@ public class deleteBtn extends myBtn {
         });
     }
 
+    public void transformerListener(StringBuilder postfix, NumberInput rawText, NumberInput resultText, UnitsText label){
+        this.addActionListener(e -> {
+            int len = postfix.length();
+            switch (len){
+                case 0: break;
+                case 1: postfix.delete(len - 1, len);rawText.setText("0");break;
+                default:postfix.delete(len - 1, len);rawText.setText(postfix.toString());break;
+            }
+            double raw=Double.parseDouble(rawText.getText());
+            switch (label.getNo()){
+                case 0:{resultText.setText(String.valueOf(raw* Constant.LENGTH[label.getRow()][label.getCol()]));break;}
+                case 1:{resultText.setText(String.valueOf(raw* Constant.MASS[label.getRow()][label.getCol()]));break;}
+                case 2:{resultText.setText(String.valueOf(raw* Constant.SPEED[label.getRow()][label.getCol()]));break;}
+
+            }
+
+        });
+    }
 
 
 
