@@ -1,4 +1,4 @@
-package components.button;
+package components.Button;
 
 import javax.swing.*;
 import java.awt.*;

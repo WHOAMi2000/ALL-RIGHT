@@ -1,4 +1,4 @@
-package components.button;
+package components.Button;
 import java.text.DecimalFormat;
 import java.util.EmptyStackException;
 import tools.postfixExpression;
@@ -12,9 +12,9 @@ import components.text.*;
 @Setter
 public class resultBtn extends myBtn {
 
-    public resultBtn(String name){
+    public resultBtn(String content){
         super();
-        this.setText(name);
+        this.setText(content);
     }
 
     public void scienceListener(String content,StringBuilder expression, NumberInput resultText){
@@ -52,13 +52,14 @@ public class resultBtn extends myBtn {
                             num=num*temp;
                             temp++;
                         }
-                        ans = num;
-                        if (ans > 0){
-                            resultText.setText(df.format(ans));
-                            expression.delete(0,expression.length());
-                            expression.append(df.format(ans));
-                        }
-                        else resultText.setText("error!");
+                        if(ans % 1 == 0) {
+                            ans = num;
+                            if (ans > 0) {
+                                resultText.setText(df.format(ans));
+                                expression.delete(0, expression.length());
+                                expression.append(df.format(ans));
+                            } else resultText.setText("error!");
+                        }else resultText.setText("error!");
                         break;
 
                 }

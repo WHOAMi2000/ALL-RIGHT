@@ -2,7 +2,7 @@ package panels;
 import javax.swing.*;
 import java.awt.*;
 import components.text.*;
-import components.button.*;
+import components.Button.*;
 import components.menu.*;
 import panels.basic.GeneralPanel;
 import panels.basic.ColorPanel;
