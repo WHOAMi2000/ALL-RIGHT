@@ -1,4 +1,4 @@
-package components.Button;
+package components.button;
 
 import lombok.Getter;
 import lombok.Setter;

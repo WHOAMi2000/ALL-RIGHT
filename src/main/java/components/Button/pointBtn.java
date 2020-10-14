@@ -1,9 +1,9 @@
-package components.Button;
+package components.button;
 
-import components.myText;
+import components.text.MyTextField;
 
 public class pointBtn extends myBtn{
-    public pointBtn(StringBuilder postfix, myText resultText){
+    public pointBtn(StringBuilder postfix, MyTextField resultText){
         super();
         this.setText(".");
         this.addActionListener(e -> {

@@ -1,4 +1,5 @@
-package components.Button;
+package components.button;
+import components.button.*;
 import components.myText;
 public class clearBtn extends myBtn{
 
