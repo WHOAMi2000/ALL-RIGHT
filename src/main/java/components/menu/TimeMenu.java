@@ -9,6 +9,7 @@ import java.util.Timer;
 public class TimeMenu extends JComboBox<String> {
     private SimpleDateFormat df = new SimpleDateFormat("EEE d MMM yyyy HH:mm:ss 'GMT'");//设置日期格式
     Timer timer = new Timer();
+    boolean isFirst = false;
 
     public TimeMenu(JLabel index_label,JLabel time_1,JLabel time_2){
         super();

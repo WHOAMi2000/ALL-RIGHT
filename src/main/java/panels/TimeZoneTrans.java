@@ -14,8 +14,6 @@ public class TimeZoneTrans {
     private compoundBtn chooseBtn = new compoundBtn("时区");
     JLabel timeZone_1 = new JLabel("timeZone_1",JLabel.CENTER) ;
     JLabel timeZone_2 = new JLabel("timeZone_2",JLabel.CENTER) ;
-    JLabel timeZone_3 = new JLabel("",JLabel.CENTER) ;
-    JLabel timeZone_4 = new JLabel("",JLabel.CENTER) ;
     JLabel index_label = new JLabel("index",JLabel.CENTER) ;
     private TimeMenu timeMenu = new TimeMenu(index_label,timeZone_1,timeZone_2);
 
@@ -29,14 +27,40 @@ public class TimeZoneTrans {
         showPanel.add(timeZone_1);
         showPanel.add(timeMenu);
         showPanel.add(timeZone_2);
+        int hours = Integer.parseInt(timeZone_1.getText().substring(16,18));
+        if(hours>=6 && hours<=9){
+            JPanel picPanel=new PicPanel(0);
+            JPanel generator=new GeneralPanel();
+            generator.setLayout(new BorderLayout(3, 5));
+            generator.add("North",showPanel);
+            generator.add("South",picPanel);
+            return generator;
+        }else if(hours>9 && hours<16){
+            JPanel picPanel=new PicPanel(1);
+            JPanel generator=new GeneralPanel();
+            generator.setLayout(new BorderLayout(3, 5));
+            generator.add("North",showPanel);
+            generator.add("South",picPanel);
+            return generator;
+        }else if(hours>=16 && hours<19){
+            JPanel picPanel=new PicPanel(2);
+            JPanel generator=new GeneralPanel();
+            generator.setLayout(new BorderLayout(3, 5));
+            generator.add("North",showPanel);
+            generator.add("South",picPanel);
+            return generator;
+        }else{
+            JPanel picPanel=new PicPanel(3);
+            JPanel generator=new GeneralPanel();
+            generator.setLayout(new BorderLayout(3, 5));
+            generator.add("North",showPanel);
+            generator.add("South",picPanel);
+            return generator;
+        }
 
-        JPanel picPanel=new PicPanel();
-        JPanel generator=new GeneralPanel();
-        generator.setLayout(new BorderLayout(3, 5));
-        generator.add("North",showPanel);
-        generator.add("South",picPanel);
 
 
-        return generator;
+
+
     }
 }
