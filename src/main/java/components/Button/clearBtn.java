@@ -9,6 +9,10 @@ public class clearBtn extends myBtn{
     }
 
     public void generalListener(StringBuilder postfix, NumberInput resultText){
+        try {
+            this.removeActionListener(this.getActionListeners()[0]);
+        } catch (IndexOutOfBoundsException ignored) {
+        }
         this.addActionListener(e -> {
                 //注意处理.的情况
                 postfix.delete(0,postfix.length());

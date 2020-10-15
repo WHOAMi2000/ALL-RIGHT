@@ -48,6 +48,10 @@ public class deleteBtn extends myBtn {
     }
 
     public void generalListener(StringBuilder postfix, NumberInput resultText){
+        try {
+            this.removeActionListener(this.getActionListeners()[0]);
+        } catch (IndexOutOfBoundsException ignored) {
+        }
         this.addActionListener(e -> {
             int len = postfix.length();
             if (len == 0){
