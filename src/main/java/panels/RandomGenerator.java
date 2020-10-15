@@ -1,8 +1,6 @@
 package panels;
 
 import components.Button.*;
-import components.menu.NavigatorUnitsBox;
-import components.menu.TransMenu;
 import components.text.NumberInput;
 import components.text.UnitsText;
 import panels.basic.ColorPanel;
@@ -23,8 +21,8 @@ public class RandomGenerator {
     private final String[] NUMBERKEYS = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0","",""};
     private numBtn[] numberButtons=new numBtn[NUMBERKEYS.length];
     private UnitsText input;
-    private randomBtn maxBtn = new randomBtn("最小值");
-    private randomBtn minBtn = new randomBtn("最大值");
+    private compoundBtn maxBtn = new compoundBtn("最小值");
+    private compoundBtn minBtn = new compoundBtn("最大值");
     private Boolean a = true;
     JLabel lab = new JLabel("结果",JLabel.CENTER) ;   // 实例化标签对象
 
@@ -43,8 +41,8 @@ public class RandomGenerator {
         deleteButton.generalListener(postfix_min,input_min);
         generateRandomButton.generalListener(input_min,input_max,result);
 
-        minBtn.generalListener(numberButtons,clearButton,deleteButton,NUMBERKEYS,postfix_min,input_min);
-        maxBtn.generalListener(numberButtons,clearButton,deleteButton,NUMBERKEYS,postfix_max,input_max);
+        minBtn.randomGeneratorListener(numberButtons,clearButton,deleteButton,NUMBERKEYS,postfix_min,input_min);
+        maxBtn.randomGeneratorListener(numberButtons,clearButton,deleteButton,NUMBERKEYS,postfix_max,input_max);
 
         JPanel showPanel=new GeneralPanel();
         showPanel.setLayout(new GridLayout(5, 1, 3, 3));
@@ -63,11 +61,11 @@ public class RandomGenerator {
         padPanel.add(numberButtons[6]);padPanel.add(numberButtons[7]);padPanel.add(numberButtons[8]);
         padPanel.add(numberButtons[11]);padPanel.add(numberButtons[9]);padPanel.add(generateRandomButton);
 
-        JPanel transformer=new GeneralPanel();
-        transformer.setLayout(new BorderLayout(3, 5));
-        transformer.add("North",showPanel);
-        transformer.add("South", padPanel);
+        JPanel generator=new GeneralPanel();
+        generator.setLayout(new BorderLayout(3, 5));
+        generator.add("North",showPanel);
+        generator.add("South", padPanel);
 
-        return transformer;
+        return generator;
     }
 }

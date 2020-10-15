@@ -34,4 +34,19 @@ public class pointBtn extends myBtn{
 
     }
 
+    public pointBtn() {
+        super();
+        this.setText(".");
+    }
+
+    public void generalListener(StringBuilder postfix, NumberInput resultText) {
+        try {
+            this.removeActionListener(this.getActionListeners()[0]);
+        } catch (IndexOutOfBoundsException ignored) {
+        }
+        this.addActionListener(e -> {
+            postfix.append('.');
+            resultText.setText(postfix.toString());
+        });
+    }
 }
