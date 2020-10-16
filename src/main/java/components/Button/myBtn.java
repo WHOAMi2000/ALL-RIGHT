@@ -7,10 +7,11 @@ public class myBtn extends JButton {
 
     public myBtn(){
         super();
-        //设置字体
+        // 设置字体
         this.setForeground(Color.black);
+        this.setBackground(null);
         this.setFont(new Font("Meiryo UI", 1, 16));
-        // 设置按钮背景透明
+        // 设置按钮背景不透明
         this.setOpaque(true);
         // 去焦点框
         this.setFocusPainted(false);
