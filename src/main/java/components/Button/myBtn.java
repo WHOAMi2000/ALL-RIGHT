@@ -1,6 +1,7 @@
 package components.Button;
 
 import javax.swing.*;
+import javax.swing.text.View;
 import java.awt.*;
 
 public class myBtn extends JButton {
@@ -18,7 +19,7 @@ public class myBtn extends JButton {
         // 可填充
         this.setContentAreaFilled(true);
         // 设置边框不可见
-        this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10,10));
+        //this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10,10));
     }
 }
 

@@ -1,8 +1,11 @@
 package panels;
 
 import javax.swing.*;
+import javax.swing.text.View;
+
 import components.text.*;
 import components.Button.*;
+import panels.basic.ColorPanel;
 import panels.basic.GeneralPanel;
 
 import java.awt.*;
@@ -76,11 +79,10 @@ public class Calculator {
         padPanel.add(operBtns[9]);padPanel.add(pointBtn);padPanel.add(numBtns[9]);padPanel.add(resultBtns[3]);padPanel.add(operBtns[15]);
 
 
-        JPanel calculator =new GeneralPanel();
+        JPanel calculator =new ColorPanel();
         calculator.setLayout(new BorderLayout(3, 5));
         calculator.add("South",padPanel);
         calculator.add("Center",resultText);
-
         return calculator;
     }
 

@@ -81,7 +81,7 @@ public class EquationSolver {
         padPanel.add(numberButtons[6]);padPanel.add(numberButtons[7]);padPanel.add(numberButtons[8]);
         padPanel.add(pointButton);padPanel.add(numberButtons[9]);padPanel.add(equationSolver);
 
-        JPanel solver=new GeneralPanel();
+        JPanel solver=new ColorPanel();
         solver.setLayout(new BorderLayout(3, 5));
         solver.add("North",showPanel);
         solver.add("South", padPanel);

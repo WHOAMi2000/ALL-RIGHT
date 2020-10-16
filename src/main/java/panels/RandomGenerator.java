@@ -18,7 +18,7 @@ public class RandomGenerator {
     private clearBtn clearButton=new clearBtn();
     private deleteBtn deleteButton=new deleteBtn();
     private GenerateRandom generateRandomButton = new GenerateRandom("Generate");
-    private final String[] NUMBERKEYS = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0","",""};
+    private final String[] NUMBERKEYS = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
     private numBtn[] numberButtons=new numBtn[NUMBERKEYS.length];
     private UnitsText input;
     private compoundBtn maxBtn = new compoundBtn("最小值");
@@ -31,8 +31,6 @@ public class RandomGenerator {
         for (int i = 0; i < NUMBERKEYS.length; i++) {
             numberButtons[i] = new numBtn(NUMBERKEYS[i]);
         }
-        numberButtons[10].setEnabled(false);
-        numberButtons[11].setEnabled(false);
 
         for (int i = 0; i < NUMBERKEYS.length; i++) {
             numberButtons[i].generalListener(NUMBERKEYS[i],postfix_min,input_min);
@@ -53,18 +51,24 @@ public class RandomGenerator {
         showPanel.add(lab);
         showPanel.add(result);
 
-        JPanel padPanel = new ColorPanel();
-        padPanel.setLayout(new GridLayout(5, 3, 3, 3));
-        padPanel.add(numberButtons[10]);padPanel.add(clearButton);padPanel.add(deleteButton);
-        padPanel.add(numberButtons[0]);padPanel.add(numberButtons[1]);padPanel.add(numberButtons[2]);
-        padPanel.add(numberButtons[3]);padPanel.add(numberButtons[4]);padPanel.add(numberButtons[5]);
-        padPanel.add(numberButtons[6]);padPanel.add(numberButtons[7]);padPanel.add(numberButtons[8]);
-        padPanel.add(numberButtons[11]);padPanel.add(numberButtons[9]);padPanel.add(generateRandomButton);
+        JPanel buttonPanel1 = new GeneralPanel();
+        buttonPanel1.setLayout(new GridLayout(1,4,2,2));
+        buttonPanel1.add(generateRandomButton);
+
+        JPanel buttonPanel2 = new GeneralPanel();
+        // 用网格布局器，3行，3列的网格，网格之间的水平方向间隔为3个象素，垂直方向间隔为3个象素
+        buttonPanel2.setLayout(new GridLayout(4, 3, 3, 3));
+        buttonPanel2.add(numberButtons[0]);buttonPanel2.add(clearButton);buttonPanel2.add(deleteButton);
+        buttonPanel2.add(numberButtons[1]);buttonPanel2.add(numberButtons[2]);buttonPanel2.add(numberButtons[3]);
+        buttonPanel2.add(numberButtons[4]);buttonPanel2.add(numberButtons[5]);buttonPanel2.add(numberButtons[6]);
+        buttonPanel2.add(numberButtons[7]);buttonPanel2.add(numberButtons[8]);buttonPanel2.add(numberButtons[9]);
 
         JPanel generator=new GeneralPanel();
-        generator.setLayout(new BorderLayout(3, 5));
+        generator.setLayout(new BorderLayout(3,3));
         generator.add("North",showPanel);
-        generator.add("South", padPanel);
+        generator.add("Center",buttonPanel1);
+        generator.add("South", buttonPanel2);
+
 
         return generator;
     }

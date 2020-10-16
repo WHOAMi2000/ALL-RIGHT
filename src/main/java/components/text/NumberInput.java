@@ -13,7 +13,7 @@ public class NumberInput extends JTextField {
         this.setFont(new Font("ARIAL",Font.BOLD,22));
         this.setOpaque(false);
         //this.setBackground(new Color(255,250,250));
-        this.setBorder(BorderFactory.createEmptyBorder(0, 10, 0,10));
+        this.setBorder(BorderFactory.createEmptyBorder(2, 10, 2,10));
     }
 
 }
