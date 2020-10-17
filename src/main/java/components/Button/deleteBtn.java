@@ -84,6 +84,37 @@ public class deleteBtn extends myBtn {
         });
     }
 
+    public void generalListener(StringBuilder postfix, NumberInput resultText_1, NumberInput resultText_2, NumberInput resultText_3, NumberInput resultText_4){
+        try {
+            this.removeActionListener(this.getActionListeners()[0]);
+        } catch (IndexOutOfBoundsException ignored) {
+        }
+        this.addActionListener(e -> {
+            int len = postfix.length();
+            if (len == 0){
+                resultText_1.setText("0");
+                resultText_2.setText("0");
+                resultText_3.setText("0");
+                resultText_4.setText("0");
+            }
+            if (len == 1){
+                postfix.delete(len-1,len);
+                resultText_1.setText("0");
+                resultText_2.setText("0");
+                resultText_3.setText("0");
+                resultText_4.setText("0");
+            }
+            if (len >= 2){
+                postfix.delete(len-1,len);
+                var number = Integer.parseInt(postfix.toString());
+                resultText_4.setText(Integer.toHexString(number));
+                resultText_3.setText(Integer.toOctalString(number));
+                resultText_2.setText(Integer.toBinaryString(number));
+                resultText_1.setText(postfix.toString());
+            }
+        });
+    }
+
     public void transformerListener(StringBuilder postfix, NumberInput rawText, NumberInput resultText, UnitsText label){
         this.addActionListener(e -> {
             int len = postfix.length();

@@ -27,6 +27,31 @@ public class numBtn extends myBtn {
         });
     }
 
+    public void ScaleTransListener(String name, StringBuilder postfix, NumberInput decimal, NumberInput binary, NumberInput octonary, NumberInput hexadecimal) {
+        try {
+            this.removeActionListener(this.getActionListeners()[0]);
+        } catch (IndexOutOfBoundsException ignored) {
+        }
+
+        this.addActionListener(e -> {
+            try{
+                postfix.append(name);
+                var number = Integer.parseInt(postfix.toString());
+                hexadecimal.setText(Integer.toHexString(number));
+                octonary.setText(Integer.toOctalString(number));
+                binary.setText(Integer.toBinaryString(number));
+                decimal.setText(postfix.toString());
+            } catch (NumberFormatException error) {
+                postfix.delete(0,postfix.length());
+                decimal.setText(postfix.toString());
+                octonary.setText(postfix.toString());
+                binary.setText(postfix.toString());
+                hexadecimal.setText(postfix.toString());
+            }
+
+        });
+    }
+
     public void transformerListener(String name, StringBuilder postfix, NumberInput rawText, NumberInput resultText, UnitsText label){
         this.addActionListener(e -> {
             postfix.append(name);
@@ -40,6 +65,8 @@ public class numBtn extends myBtn {
             }
         });
     }
+
+
 
 
 }

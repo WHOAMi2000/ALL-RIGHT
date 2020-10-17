@@ -11,6 +11,7 @@ public class mainPanel extends JFrame{
     }
     private Calculator calculator =new Calculator();
     private UnitTransformer unitTransformer =new UnitTransformer();
+    private BasicScaleTransformer scaleTransformer = new BasicScaleTransformer();
     private EquationSolver equationSolver =new EquationSolver();
     private BackgroundAdd backgroundAdd =new BackgroundAdd();
     private RandomGenerator randomGenerator =new RandomGenerator();
@@ -58,25 +59,32 @@ public class mainPanel extends JFrame{
                 case 3: {
                     container.getComponent(1).setVisible(false);
                     container.remove(1);
-                    container.add("South", equationSolver.init());
+                    container.add("South", scaleTransformer.init());
                     container.revalidate();
                     break;
                 }
                 case 4: {
                     container.getComponent(1).setVisible(false);
                     container.remove(1);
-                    container.add("South", randomGenerator.init());
+                    container.add("South", equationSolver.init());
                     container.revalidate();
                     break;
                 }
                 case 5: {
                     container.getComponent(1).setVisible(false);
                     container.remove(1);
-                    container.add("South", sudokuGame.init());
+                    container.add("South", randomGenerator.init());
                     container.revalidate();
                     break;
                 }
                 case 6: {
+                    container.getComponent(1).setVisible(false);
+                    container.remove(1);
+                    container.add("South", sudokuGame.init());
+                    container.revalidate();
+                    break;
+                }
+                case 7: {
                     container.getComponent(1).setVisible(false);
                     container.remove(1);
                     container.add("South", backgroundAdd.init());
