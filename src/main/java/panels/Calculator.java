@@ -68,8 +68,8 @@ public class Calculator {
         clearBtn.generalListener(postfix,resultText);
         deleteBtn.generalListener(postfix,resultText);
 
-        JPanel padPanel = new GeneralPanel();
-        padPanel.setLayout(new GridLayout(7, 5, 3, 3));
+        JPanel padPanel = new ColorPanel();
+        padPanel.setLayout(new GridLayout(7, 5, 7, 7));
         padPanel.add(operBtns[0]);padPanel.add(resultBtns[0]);padPanel.add(operBtns[1]);padPanel.add(clearBtn);padPanel.add(deleteBtn);
         padPanel.add(resultBtns[1]);padPanel.add(resultBtns[2]);padPanel.add(operBtns[2]);padPanel.add(operBtns[3]);padPanel.add(operBtns[4]);
         padPanel.add(operBtns[5]);padPanel.add(numBtns[10]);padPanel.add(numBtns[11]);padPanel.add(operBtns[10]);padPanel.add(operBtns[11]);
@@ -78,11 +78,15 @@ public class Calculator {
         padPanel.add(operBtns[8]);padPanel.add(numBtns[6]);padPanel.add(numBtns[7]);padPanel.add(numBtns[8]);padPanel.add(operBtns[14]);
         padPanel.add(operBtns[9]);padPanel.add(pointBtn);padPanel.add(numBtns[9]);padPanel.add(resultBtns[3]);padPanel.add(operBtns[15]);
 
+        JPanel result =new GeneralPanel();
+        result.setLayout(new GridLayout(1, 1));
+        result.add(resultText);
 
-        JPanel calculator =new ColorPanel();
+        JPanel calculator = new GeneralPanel();
         calculator.setLayout(new BorderLayout(3, 5));
-        calculator.add("South",padPanel);
-        calculator.add("Center",resultText);
+        calculator.add("Center",padPanel);
+        calculator.add("North",result);
+
         return calculator;
     }
 

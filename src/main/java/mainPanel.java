@@ -22,7 +22,7 @@ public class mainPanel extends JFrame{
         super();
         init();
         this.setTitle("啥都队-计算器");
-        this.setSize(365,450);
+        this.setSize(365,400);
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
