@@ -24,25 +24,39 @@ public class resultBtn extends myBtn {
                 postfixExpression postfix = new postfixExpression(expression.toString());
                 scienceCalculate sciCal = new scienceCalculate(postfix.InifixtoPostfix());
                 double ans = sciCal.compute();
-                final DecimalFormat df = new DecimalFormat( "#.##########" );
+                final DecimalFormat df = new DecimalFormat( "#.###########" );
+                final DecimalFormat df1 = new DecimalFormat( "0.0000000000E0" );
                 switch (content){
 
                     case "=" :
-                        resultText.setText(df.format(ans));
+                        if(ans>= 1E11 || ans <= 1E-11) {
+                            resultText.setText(df1.format(ans));
+                        } else {
+                           resultText.setText(df.format(ans));
+                        }
                         if (expression.length()!=0)
                             expression.delete(0,expression.length());
                         expression.append(df.format(ans));
                         break;
 
                     case "1/x" :
-                        ans = 1.0/ans; resultText.setText(df.format(ans));
+                        ans = 1.0/ans;
+                        if(ans>= 1E11 || ans <= 1E-11) {
+                            resultText.setText(df1.format(ans));
+                        } else {
+                            resultText.setText(df.format(ans));
+                        }
                         expression.delete(0,expression.length());
                         expression.append(df.format(ans));
                         break;
 
                     case "|x|" :
                         ans = Math.abs(ans);
-                        resultText.setText(df.format(ans));
+                        if(ans>= 1E11 || ans <= 1E-11) {
+                            resultText.setText(df1.format(ans));
+                        } else {
+                            resultText.setText(df.format(ans));
+                        }
                         expression.delete(0,expression.length());
                         expression.append(df.format(ans));
                         break;
@@ -73,19 +87,6 @@ public class resultBtn extends myBtn {
         });
 
     }
-
-    public static String scientificNotation2String(Double d, int newValue) {
-        String value = null;
-        NumberFormat nf = NumberFormat.getInstance();
-        // 设置此格式中不使用分组
-        nf.setGroupingUsed(false);
-        // 设置数的小数部分所允许的最大位数。
-        nf.setMaximumFractionDigits(newValue);
-        value = nf.format(d);
-        return value;
-    }
-
-
 
 
 }
