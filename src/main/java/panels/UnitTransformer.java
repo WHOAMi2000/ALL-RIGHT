@@ -5,7 +5,6 @@ import components.text.*;
 import components.Button.*;
 import components.menu.*;
 import panels.basic.GeneralPanel;
-import panels.basic.ColorPanel;
 
 public class UnitTransformer {
     private StringBuilder postfix = new StringBuilder();
@@ -31,10 +30,19 @@ public class UnitTransformer {
         for (int i = 0; i < NUMBERKEYS.length; i++) {
             numberButtons[i] = new numBtn(NUMBERKEYS[i]);
             numberButtons[i].transformerListener(NUMBERKEYS[i],postfix,rawText,resultText,input);
+            numberButtons[i].setOpaque(true);
+            numberButtons[i].setBackground(Color.WHITE);
         }
 
         clearButton.transformerListener(postfix,rawText,resultText);
         deleteButton.transformerListener(postfix,rawText,resultText,input);
+
+        clearButton.setOpaque(true);
+        deleteButton.setOpaque(true);
+        pointButton.setOpaque(true);
+        pointButton.setBackground(Color.WHITE);
+        clearButton.setBackground(new Color(255,222,173));
+        deleteButton.setBackground(new Color(255,222,173));
 
         JPanel showPanel=new GeneralPanel();
         showPanel.setLayout(new GridLayout(5, 1, 3, 3));
@@ -60,7 +68,7 @@ public class UnitTransformer {
         buttonPanel.add("Center",buttonPanel1);
         buttonPanel.add("South", buttonPanel2);
 
-        JPanel transformer=new ColorPanel();
+        JPanel transformer=new GeneralPanel();
         transformer.setLayout(new BorderLayout(4, 25));
         transformer.add("North",showPanel);
         transformer.add("Center",buttonPanel);

@@ -1,10 +1,11 @@
 package tools;
 
+import components.Button.myBtn;
 import components.text.NumberInput;
 
 import javax.swing.*;
 
-public class equationSolver extends JButton {
+public class equationSolver extends myBtn {
     public equationSolver(String content){
         super();
         this.setText(content);
@@ -29,7 +30,7 @@ public class equationSolver extends JButton {
                 }
                 double delta = b*b-4*a*c;
                 if(delta<0){
-                    result_1.setText("方程无解！");
+                    result_1.setText("no solutions");
                     result_2.setText(null);
                     return;
                 }else if(delta==0){

@@ -10,6 +10,9 @@ public class compoundBtn extends JButton {
     public compoundBtn(String content){
         super();
         this.setText(content);
+        this.setOpaque(false);
+        this.setContentAreaFilled(false);
+        this.setFocusPainted(false);
     }
 
     public void randomGeneratorListener(numBtn[] numberButtons,clearBtn clearButton,deleteBtn deleteButton,String[] NUMBERKEYS, StringBuilder postfix,NumberInput input) {

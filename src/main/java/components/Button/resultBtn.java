@@ -1,5 +1,6 @@
 package components.Button;
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.EmptyStackException;
 import tools.postfixExpression;
 import tools.scienceCalculate;
@@ -71,6 +72,17 @@ public class resultBtn extends myBtn {
             }
         });
 
+    }
+
+    public static String scientificNotation2String(Double d, int newValue) {
+        String value = null;
+        NumberFormat nf = NumberFormat.getInstance();
+        // 设置此格式中不使用分组
+        nf.setGroupingUsed(false);
+        // 设置数的小数部分所允许的最大位数。
+        nf.setMaximumFractionDigits(newValue);
+        value = nf.format(d);
+        return value;
     }
 
 

@@ -1,9 +1,7 @@
 package panels;
 
 import components.Button.*;
-import components.text.EquationSolutions;
 import components.text.NumberInput;
-import panels.basic.ColorPanel;
 import panels.basic.GeneralPanel;
 import tools.equationSolver;
 
@@ -33,7 +31,7 @@ public class EquationSolver {
 
     private equationSolver equationSolver = new equationSolver("Solve");
 
-    private final String[] NUMBERKEYS = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0","",""};
+    private final String[] NUMBERKEYS = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
     private numBtn[] numberButtons=new numBtn[NUMBERKEYS.length];
 
     JLabel lab = new JLabel("方程的解为",JLabel.CENTER) ;   // 实例化标签对象
@@ -43,17 +41,30 @@ public class EquationSolver {
         for (int i = 0; i < NUMBERKEYS.length; i++) {
             numberButtons[i] = new numBtn(NUMBERKEYS[i]);
         }
-        numberButtons[10].setEnabled(false);
-        numberButtons[11].setEnabled(false);
+
 
         for (int i = 0; i < NUMBERKEYS.length; i++) {
             numberButtons[i].generalListener(NUMBERKEYS[i],postfix_a,input_a);
+            numberButtons[i].setOpaque(true);
+            numberButtons[i].setBackground(Color.WHITE);
         }
+
         clearButton.generalListener(postfix_a,input_a);
         deleteButton.generalListener(postfix_a,input_a);
         pointButton.generalListener(postfix_a,input_a);
         negativeButton.generalListener(postfix_a,input_a);
         equationSolver.generalListener(input_a,input_b,input_c,result_1,result_2);
+
+        clearButton.setOpaque(true);
+        deleteButton.setOpaque(true);
+        pointButton.setOpaque(true);
+        negativeButton.setOpaque(true);
+        equationSolver.setOpaque(true);
+        pointButton.setBackground(Color.WHITE);
+        clearButton.setBackground(new Color(255,222,173));
+        deleteButton.setBackground(new Color(255,222,173));
+        negativeButton.setBackground(new Color(245, 245, 245));
+        equationSolver.setBackground(new Color(126, 192, 238));
 
         aBtn.equationSolverListener(0,numberButtons,clearButton,deleteButton,pointButton,negativeButton,NUMBERKEYS,postfix_a,input_a);
         bBtn.equationSolverListener(1,numberButtons,clearButton,deleteButton,pointButton,negativeButton,NUMBERKEYS,postfix_b,input_b);
@@ -73,7 +84,7 @@ public class EquationSolver {
         showPanel.add(result_1);
         showPanel.add(result_2);
 
-        JPanel padPanel = new ColorPanel();
+        JPanel padPanel = new GeneralPanel();
         padPanel.setLayout(new GridLayout(5, 3, 3, 3));
         padPanel.add(negativeButton);padPanel.add(clearButton);padPanel.add(deleteButton);
         padPanel.add(numberButtons[0]);padPanel.add(numberButtons[1]);padPanel.add(numberButtons[2]);
@@ -81,7 +92,7 @@ public class EquationSolver {
         padPanel.add(numberButtons[6]);padPanel.add(numberButtons[7]);padPanel.add(numberButtons[8]);
         padPanel.add(pointButton);padPanel.add(numberButtons[9]);padPanel.add(equationSolver);
 
-        JPanel solver=new ColorPanel();
+        JPanel solver=new GeneralPanel();
         solver.setLayout(new BorderLayout(3, 5));
         solver.add("North",showPanel);
         solver.add("South", padPanel);

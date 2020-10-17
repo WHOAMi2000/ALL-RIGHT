@@ -30,7 +30,7 @@ public class checkBox extends BasicComboBoxUI {
         arrow.setIcon(DOWN_ICON);
         arrow.setFocusable(false);
         arrow.setOpaque(true);
-        arrow.setMargin(new Insets(0, 24, 0, 0));
+        arrow.setMargin(new Insets(0, 20, 0, 0));
         return arrow;
     }
 

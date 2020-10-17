@@ -13,7 +13,6 @@ public class mainPanel extends JFrame{
     private UnitTransformer unitTransformer =new UnitTransformer();
     private BasicScaleTransformer scaleTransformer = new BasicScaleTransformer();
     private EquationSolver equationSolver =new EquationSolver();
-    private BackgroundAdd backgroundAdd =new BackgroundAdd();
     private RandomGenerator randomGenerator =new RandomGenerator();
     private SudokuGame sudokuGame =new SudokuGame();
     private TimeZoneTrans timeZoneTrans =new TimeZoneTrans();
@@ -22,7 +21,7 @@ public class mainPanel extends JFrame{
         super();
         init();
         this.setTitle("啥都队-计算器");
-        this.setSize(365,400);
+        this.setSize(400,450);
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
@@ -81,13 +80,6 @@ public class mainPanel extends JFrame{
                     container.getComponent(1).setVisible(false);
                     container.remove(1);
                     container.add("South", sudokuGame.init());
-                    container.revalidate();
-                    break;
-                }
-                case 7: {
-                    container.getComponent(1).setVisible(false);
-                    container.remove(1);
-                    container.add("South", backgroundAdd.init());
                     container.revalidate();
                     break;
                 }

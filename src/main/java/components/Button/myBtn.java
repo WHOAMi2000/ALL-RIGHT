@@ -12,14 +12,14 @@ public class myBtn extends JButton {
         this.setForeground(Color.black);
         this.setBackground(null);
         this.setFont(new Font("Meiryo UI", 1, 16));
-        // 设置按钮背景不透明
-        this.setOpaque(true);
+        // 设置按钮背景透明
+        this.setOpaque(false);
         // 去焦点框
         this.setFocusPainted(false);
-        // 可填充
-        this.setContentAreaFilled(true);
+        // 不可填充
+        this.setContentAreaFilled(false);
         // 设置边框不可见
-        //this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10,10));
+        this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10,10));
     }
 }
 

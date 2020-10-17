@@ -1,11 +1,9 @@
 package panels;
 
 import javax.swing.*;
-import javax.swing.text.View;
 
 import components.text.*;
 import components.Button.*;
-import panels.basic.ColorPanel;
 import panels.basic.GeneralPanel;
 
 import java.awt.*;
@@ -31,7 +29,8 @@ public class Calculator {
         for (int i = 0; i < RESULTBUTTONS.length; i++) {
             resultBtns[i] = new resultBtn(RESULTBUTTONS[i]);
             resultBtns[i].scienceListener(RESULTBUTTONS[i], postfix, resultText);
-
+            resultBtns[i].setOpaque(true);
+            resultBtns[i].setBorder(BorderFactory.createEmptyBorder(10, 10, 10,10));
             //设置等号为蓝色，其他为灰色
             if(i<3)
                 resultBtns[i].setBackground(new Color(245, 245, 245));
@@ -42,6 +41,7 @@ public class Calculator {
         for (int i = 0; i < NUMBERBUTTONS.length; i++) {
             numBtns[i] = new numBtn(NUMBERBUTTONS[i]);
             numBtns[i].generalListener(NUMBERBUTTONS[i], postfix, resultText);
+            numBtns[i].setOpaque(true);
             //设置0-9数字按钮字体颜色为白色，其他为灰色
             if (i<10)
                 numBtns[i].setBackground(Color.WHITE);
@@ -54,22 +54,31 @@ public class Calculator {
             operBtns[i] = new operBtn(OPERATORBUTTONS[i], OPERATORS[i], postfix, resultText, pointBtn);
             // 设置颜色
             operBtns[i].setBackground(new Color(245, 245, 245));
+            operBtns[i].setBorder(BorderFactory.createEmptyBorder(10, 10, 10,10));
+            operBtns[i].setOpaque(true);
         }
 
         // 初始化后退、清除按钮
         clearBtn=new clearBtn();
         deleteBtn=new deleteBtn();
         pointBtn=new pointBtn(postfix,resultText);
+        //设置不透明
+        clearBtn.setOpaque(true);
+        deleteBtn.setOpaque(true);
+        pointBtn.setOpaque(true);
         // 设置颜色
         clearBtn.setBackground(new Color(255,222,173));
         deleteBtn.setBackground(new Color(255,222,173));
         pointBtn.setBackground(Color.WHITE);
+        clearBtn.setBorder(BorderFactory.createEmptyBorder(10, 10, 10,10));
+        deleteBtn.setBorder(BorderFactory.createEmptyBorder(10, 10, 10,10));
+        pointBtn.setBorder(BorderFactory.createEmptyBorder(10, 10, 10,10));
 
         clearBtn.generalListener(postfix,resultText);
         deleteBtn.generalListener(postfix,resultText);
 
-        JPanel padPanel = new ColorPanel();
-        padPanel.setLayout(new GridLayout(7, 5, 7, 7));
+        JPanel padPanel = new GeneralPanel();
+        padPanel.setLayout(new GridLayout(7, 5, 3, 3));
         padPanel.add(operBtns[0]);padPanel.add(resultBtns[0]);padPanel.add(operBtns[1]);padPanel.add(clearBtn);padPanel.add(deleteBtn);
         padPanel.add(resultBtns[1]);padPanel.add(resultBtns[2]);padPanel.add(operBtns[2]);padPanel.add(operBtns[3]);padPanel.add(operBtns[4]);
         padPanel.add(operBtns[5]);padPanel.add(numBtns[10]);padPanel.add(numBtns[11]);padPanel.add(operBtns[10]);padPanel.add(operBtns[11]);

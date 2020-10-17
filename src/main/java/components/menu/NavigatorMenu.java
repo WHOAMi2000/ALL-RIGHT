@@ -3,6 +3,7 @@ package components.menu;
 import components.UI.checkBox;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class NavigatorMenu extends JComboBox<String> {
 
@@ -15,8 +16,8 @@ public class NavigatorMenu extends JComboBox<String> {
         this.addItem("方程计算");
         this.addItem("生成随机数");
         this.addItem("数独游戏");
-        this.addItem("上传背景");
-        this.setUI(new checkBox("arrow.png"));
+        this.setUI(new checkBox("arrow2.png"));
+        this.setFont(new Font("黑体",0,14));
     }
 
 }

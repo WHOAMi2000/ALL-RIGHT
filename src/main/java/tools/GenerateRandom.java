@@ -1,12 +1,13 @@
 package tools;
 import components.Button.clearBtn;
 import components.Button.deleteBtn;
+import components.Button.myBtn;
 import components.Button.numBtn;
 import components.text.NumberInput;
 
 import javax.swing.*;
 
-public class GenerateRandom extends JButton {
+public class GenerateRandom extends myBtn {
     public GenerateRandom(String content){
         super();
         this.setText(content);
