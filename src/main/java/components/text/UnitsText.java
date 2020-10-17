@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import common.Constant;
+import tools.UpdateRate;
 
 @Getter
 @Setter
@@ -18,10 +19,12 @@ public class UnitsText extends JLabel {
     private int row=0;
     private int col=0;
     private double rate;
+    private UpdateRate changeRates;
     public UnitsText(){
         super();
         this.setForeground(Color.BLUE);
         this.setPreferredSize(new Dimension(340,30));
+        changeRates =new UpdateRate();
     }
     public void updateText(){
         switch(no){
@@ -35,6 +38,7 @@ public class UnitsText extends JLabel {
                         @Override
                         public void mouseClicked(MouseEvent e) {
                             UnitsText.super.removeMouseListener(UnitsText.super.getMouseListeners()[0]);
+                            changeRates.start();
                             updateText();
                         }
                         @Override

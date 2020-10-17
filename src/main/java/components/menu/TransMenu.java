@@ -11,6 +11,7 @@ public class TransMenu extends JComboBox<String> {
         this.addItem("长度");
         this.addItem("质量");
         this.addItem("速率");
+        this.addItem("货币");
         this.setOpaque(true);
         this.addActionListener(e -> {
                switch (this.getSelectedIndex()){
@@ -61,6 +62,24 @@ public class TransMenu extends JComboBox<String> {
                            navigatorUnitsBox.addItem("英里/小时");
                            navigatorUnitsBox.addItem("节");
                            navigatorUnitsBox.setSelectedIndex(1);
+                       }
+                       break;
+                   }
+                   case 3: {
+                       label.setNo(3);
+                       label.setRow(0);
+                       label.setCol(0);
+                       for (NavigatorUnitsBox unitsComboBox : navigatorUnitsBoxes) {
+                           unitsComboBox.removeAllItems();
+                           unitsComboBox.addItem("人民币");
+                           unitsComboBox.addItem("美元");
+                           unitsComboBox.addItem("英磅");
+                           unitsComboBox.addItem("欧元");
+                           unitsComboBox.addItem("韩元");
+                           unitsComboBox.addItem("日元");
+                           unitsComboBox.addItem("新台币");
+                           unitsComboBox.addItem("澳门币");
+                           unitsComboBox.setSelectedIndex(0);
                        }
                        break;
                    }

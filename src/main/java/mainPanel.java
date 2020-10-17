@@ -1,4 +1,6 @@
 import panels.*;
+import tools.UpdateRate;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -23,6 +25,7 @@ public class mainPanel extends JFrame{
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
+        UpdateRate.readFile();
     }
     private void init(){
         Container container=getContentPane();
