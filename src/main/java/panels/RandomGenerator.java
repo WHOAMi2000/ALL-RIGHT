@@ -63,7 +63,8 @@ public class RandomGenerator {
         buttonPanel2.add(numberButtons[4]);buttonPanel2.add(numberButtons[5]);buttonPanel2.add(numberButtons[6]);
         buttonPanel2.add(numberButtons[7]);buttonPanel2.add(numberButtons[8]);buttonPanel2.add(numberButtons[9]);
 
-        JPanel generator=new GeneralPanel();
+
+        JPanel generator=new ColorPanel();
         generator.setLayout(new BorderLayout(3,3));
         generator.add("North",showPanel);
         generator.add("Center",buttonPanel1);

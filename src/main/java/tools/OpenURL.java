@@ -15,8 +15,8 @@ import java.util.logging.Logger;
 public class OpenURL extends JLabel {
 
     public OpenURL() {
-        this.setSize(300, 100);
-        this.setText("           Go to Website! Click Here!");
+        this.setSize(300, 150);
+        this.setText("              Click here and direct you to the website!");
         this.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.setVisible(true);
         goWebsite(this);

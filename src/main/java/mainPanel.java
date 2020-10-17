@@ -32,42 +32,49 @@ public class mainPanel extends JFrame{
         navigator.getMenu().addActionListener(e -> {
             switch (navigator.getMenu().getSelectedIndex()){
                 case 0: {
+                    container.getComponent(1).setVisible(false);
                     container.remove(1);
                     container.add("South", calculator.init());
                     container.revalidate();
                     break;
                 }
                 case 1: {
+                    container.getComponent(1).setVisible(false);
                     container.remove(1);
                     container.add("South", unitTransformer.init());
                     container.revalidate();
                     break;
                 }
                 case 2: {
+                    container.getComponent(1).setVisible(false);
                     container.remove(1);
                     container.add("South", timeZoneTrans.init());
                     container.revalidate();
                     break;
                 }
                 case 3: {
+                    container.getComponent(1).setVisible(false);
                     container.remove(1);
                     container.add("South", equationSolver.init());
                     container.revalidate();
                     break;
                 }
                 case 4: {
+                    container.getComponent(1).setVisible(false);
                     container.remove(1);
                     container.add("South", randomGenerator.init());
                     container.revalidate();
                     break;
                 }
                 case 5: {
+                    container.getComponent(1).setVisible(false);
                     container.remove(1);
                     container.add("South", sudokuGame.init());
                     container.revalidate();
                     break;
                 }
                 case 6: {
+                    container.getComponent(1).setVisible(false);
                     container.remove(1);
                     container.add("South", backgroundAdd.init());
                     container.revalidate();

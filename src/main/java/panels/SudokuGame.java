@@ -22,7 +22,7 @@ public class SudokuGame {
     SimpleDateFormat df = new SimpleDateFormat("EEE d MMM yyyy HH:mm:ss 'GMT'");//设置日期格式
 
     public JPanel init(){
-        JPanel showPanel=new GeneralPanel();
+        JPanel showPanel=new ColorPanel();
         showPanel.setLayout(new GridLayout(5, 1, 3, 3));
         showPanel.add(urlLabel);
         JPanel picPanel=new PicPanel("src/main/resources/sudoku.jpeg");

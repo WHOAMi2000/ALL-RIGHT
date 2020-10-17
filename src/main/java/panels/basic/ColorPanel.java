@@ -11,7 +11,7 @@ public class ColorPanel extends JPanel {
         super();
         this.setBackground(null);
         this.setOpaque(true);
-        icon=new ImageIcon("src/main/resources/0.jpeg");
+        icon=new ImageIcon("src/main/resources/background.jpg");
         img=icon.getImage();
     }
     @Override
