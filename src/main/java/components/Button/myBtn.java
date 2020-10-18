@@ -16,8 +16,8 @@ public class myBtn extends JButton {
         this.setOpaque(false);
         // 去焦点框
         this.setFocusPainted(false);
-        // 不可填充
-        this.setContentAreaFilled(false);
+        // 可填充
+        this.setContentAreaFilled(true);
         // 设置边框不可见
         this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10,10));
     }

@@ -36,6 +36,7 @@ public class BasicScaleTransformer {
     public JPanel init(){
         // 上传图片文件
         addBackBtn.setText("upload background");
+        addBackBtn.setContentAreaFilled(false);
         addBackBtn.addActionListener(new ActionListener()
         {
             @Override
@@ -80,10 +81,15 @@ public class BasicScaleTransformer {
 
         for (int i = 0; i < NUMBERKEYS.length; i++) {
             numberButtons[i].ScaleTransListener(NUMBERKEYS[i],postfix,decimalInput,binaryResult,octonaryResult,hexadecimalResult);
+            numberButtons[i].setContentAreaFilled(false);
         }
 
         clearButton.generalListener(postfix,decimalInput,binaryResult,octonaryResult,hexadecimalResult);
         deleteButton.generalListener(postfix,decimalInput,binaryResult,octonaryResult,hexadecimalResult);
+
+        clearButton.setContentAreaFilled(false);
+        deleteButton.setContentAreaFilled(false);
+        generateRandomButton.setContentAreaFilled(false);
 
         JPanel showPanel=new GeneralPanel();
         showPanel.setLayout(new GridLayout(5, 1, 3, 3));

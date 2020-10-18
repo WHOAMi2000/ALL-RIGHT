@@ -35,6 +35,7 @@ public class RandomGenerator {
     public JPanel init(){
         input=new UnitsText();
         addBackBtn.setText("upload background");
+        addBackBtn.setContentAreaFilled(false);
         addBackBtn.addActionListener(new ActionListener()
         {
             @Override
@@ -78,10 +79,15 @@ public class RandomGenerator {
 
         for (int i = 0; i < NUMBERKEYS.length; i++) {
             numberButtons[i].generalListener(NUMBERKEYS[i],postfix_min,input_min);
+            numberButtons[i].setContentAreaFilled(false);
         }
         clearButton.generalListener(postfix_min,input_min);
         deleteButton.generalListener(postfix_min,input_min);
         generateRandomButton.generalListener(input_min,input_max,result);
+
+        clearButton.setContentAreaFilled(false);
+        deleteButton.setContentAreaFilled(false);
+        generateRandomButton.setContentAreaFilled(false);
 
         minBtn.randomGeneratorListener(numberButtons,clearButton,deleteButton,NUMBERKEYS,postfix_min,input_min);
         maxBtn.randomGeneratorListener(numberButtons,clearButton,deleteButton,NUMBERKEYS,postfix_max,input_max);
